@@ -1,8 +1,10 @@
 #include "World.h"
 
+
 World::World()
 {
     //ctor
+
 }
 
 World::~World()
@@ -26,7 +28,10 @@ void World::Run()
 
         m_Window.clear();
         m_Player.Render(m_Window);
+        //m_Map.Render(m_Window);
         m_Window.display();
+
+
 
 
 
