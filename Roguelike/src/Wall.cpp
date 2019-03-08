@@ -1,10 +1,10 @@
-#include "Map.h"
+#include "Wall.h"
 
-Map::Map(Wall &wall):
-m_wall(wall)
+Wall::Wall()
 {
+    //ctor
 
-
+    /*
     sf::RectangleShape m_shape0{sf::Vector2f(25,25)};
     sf::RectangleShape m_shape1{sf::Vector2f(25,25)};
     sf::RectangleShape m_shape2{sf::Vector2f(25,25)};
@@ -17,32 +17,29 @@ m_wall(wall)
 
 
 
-    m_wall.wall_add(m_shape0);
-    m_wall.wall_add(m_shape1);
-    m_wall.wall_add(m_shape2);
-    //wall.wallsList().push_back(m_shape0);
-    //wall.wallsList().push_back(m_shape1);
-    //wall.wallsList().push_back(m_shape2);
+    m_walls.push_front(m_shape0);
+    m_walls.push_front(m_shape1);
+    m_walls.push_front(m_shape2); */
 
-
-    //ctor
 }
 
-Map::~Map()
+Wall::~Wall()
 {
     //dtor
 }
 
 
-void Map::Render(sf::RenderWindow& window)
+std::list<sf::RectangleShape> Wall::wallsList()
 {
-    for(auto const& it : m_wall.wallsList())
-    {
-        window.draw(it);
-    }
+    return m_walls;
 }
 
-void Map::Level(int x)
+void Wall::wall_add(sf::RectangleShape rect)
 {
-
+    m_walls.push_front(rect);
 }
+
+
+
+
+
