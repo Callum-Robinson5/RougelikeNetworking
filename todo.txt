@@ -1,0 +1,22 @@
+Network_client
+  - TcpSocket
+  - queue
+  + connect
+  + send_tcp
+  + receive_tcp
+
+Queue
+  + pop
+  + push
+  - mutex
+  - queue
+  - condition variable
+
+
+Network_server
+  - TcpListener
+  - queue
+  - client list
+  + accepter
+  + receive_tcp // echo message
+  + send_tcp
