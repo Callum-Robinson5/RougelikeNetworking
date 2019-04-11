@@ -1,25 +1,31 @@
 #ifndef WORLD_H
 #define WORLD_H
-#include "Player.h"
-#include <SFML/Graphics.hpp>
+
+#include "Map.h"
+#include "Wall.h"
+#include "Network_Client.h"
+
 
 class World
 {
     public:
         World();
         virtual ~World();
-
+        sf::RenderWindow m_Window{sf::VideoMode(m_screenWidth, m_screenHeight), "T7087915 Roguelike"};
         void Run();
 
     protected:
 
     private:
 
+    class Network_Client client;
 
     int m_screenWidth{1280};
     int m_screenHeight{720};
+    Wall m_wall;
     Player m_Player;
-    sf::RenderWindow m_Window{sf::VideoMode(m_screenWidth, m_screenHeight), "T7087915 Roguelike"};
+    Map m_Map;
+
 };
 
 #endif // WORLD_H
