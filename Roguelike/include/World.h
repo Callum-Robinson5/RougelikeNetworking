@@ -20,7 +20,9 @@ class World
     private:
 
     class Network_Client client;
+    void UIUpdate();
 
+    sf::Font font;
     int m_screenWidth{1280};
     int m_screenHeight{720};
     Wall m_wall;
@@ -28,8 +30,15 @@ class World
     Map m_Map;
 
     class AI m_Enemy;
-    int numOfAI{60};
+    int numOfAI{40};
+    int m_score{0};
     std::vector<AI> m_Enemies;
+    sf::Text hp;
+    sf::Text hpVal;
+    sf::Text score;
+    sf::Text scoreVal;
+    sf::Text damage;
+    sf::Text damageVal;
 
 };
 
