@@ -22,6 +22,9 @@ public:
     void shoot(sf::RenderWindow& window);
     std::vector<Projectile> m_bullets;
     int numBullets{0};
+    int hp{100};
+    int ammo{100};
+    sf::RectangleShape m_Player{sf::Vector2f(25,25)};
 
 
 protected:
@@ -30,8 +33,7 @@ private:
 
     //Stats
     float m_speed{5.0f};
-    int hp{100};
-    int ammo{100};
+
 
     //Movement
     bool wall_collision{false};
@@ -39,7 +41,7 @@ private:
 
     Wall &m_wall;
 
-    sf::RectangleShape m_Player{sf::Vector2f(25,25)};
+
 
     class Projectile projectile;
 
